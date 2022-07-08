@@ -55,6 +55,7 @@ import NewGuideStartModal from "metabase/containers/newguide/NewGuideStartModal"
 import TableCategory from "metabase/query_builder/components/question/TableCategory";
 import { useQuery } from "react-query";
 import { QUERY_OPTIONS } from "metabase/containers/dashboards/shared/config";
+import TableRecent from "metabase/query_builder/components/question/TableRecent";
 
 function QuestionSide({
   question,
@@ -251,6 +252,16 @@ function QuestionSide({
           category={category}
         />
       )}
+      <TableRecent
+        isEditing={isEditing}
+        setSearchKey={setSearchKey}
+        searchKey={searchKey}
+        searchKeyValue={searchKeyValue}
+        searchLoading={searchKeyValue.length > 0 && isLoading}
+        databaseId={databaseId}
+        formDataSelector={formDataSelector}
+        handleSelectTable={handleSelectTable}
+      />
       <>
         <TableDataList
           isLoading={isLoading}
