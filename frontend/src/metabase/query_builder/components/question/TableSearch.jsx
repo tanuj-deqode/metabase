@@ -40,7 +40,7 @@ const TableSearch = props => {
     MetabaseAnalytics.trackStructEvent(`question-side search ${val}`);
   }, 500);
 
-  const menu =
+  /*  const menu =
     recentTable?.length && searchKeyValue?.length === 0 && !formDataSelector ? (
       <Menu className="question-side__recent">
         <div className="question-side__recent-title">Recent</div>
@@ -69,7 +69,7 @@ const TableSearch = props => {
       </Menu>
     ) : (
       <div />
-    );
+    );*/
 
   return (
     <MyPopover
@@ -79,15 +79,15 @@ const TableSearch = props => {
       delayModel
       delayShow={!!databases}
     >
-      <Dropdown overlay={menu} trigger={["click"]}>
-        <Search
-          allowClear
-          placeholder="Search dataset..."
-          onChange={e => changeHandler(e.target.value)}
-          className="question-side__search"
-          loading={searchLoading}
-        />
-      </Dropdown>
+      {/*<Dropdown overlay={menu} trigger={["click"]}>*/}
+      <Search
+        allowClear
+        placeholder="Search dataset..."
+        onChange={e => changeHandler(e.target.value)}
+        className="question-side__search"
+        loading={searchLoading}
+      />
+      {/*</Dropdown>*/}
     </MyPopover>
   );
 };
