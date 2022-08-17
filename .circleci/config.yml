@@ -562,9 +562,9 @@ jobs:
               echo 'This is a release or master branch; using cache-busting prefix'
                 echo '<< pipeline.id >>' > .CACHE-PREFIX
             fi
-      - run-yarn-command:
-          command-name: Create static visualization js bundle
-          command: build-static-viz
+      # - run-yarn-command:
+      #     command-name: Create static visualization js bundle
+      #     command: build-static-viz
       - persist_to_workspace:
           root: /home/circleci/
           paths:
